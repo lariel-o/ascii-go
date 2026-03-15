@@ -18,7 +18,7 @@ func main() {
 	currentTableMax 		:= tableType[currentTableType][1]
 	currentTableLength		:= currentTableMax - currentTableMin 
 
-	w := tabwriter.NewWriter(os.Stdout, 0, 0, 5, ' ', tabwriter.TabIndent)
+	w := tabwriter.NewWriter(os.Stdout, 0, 0, 4, ' ', tabwriter.AlignRight)
 	header := "Dec\tHex\tSymb\t\tDec\tHex\tSymb\t\tDec\tHex\tSymb\t\tDec\tHex\tSymb\t\tDec\tHex\tSymb\t\tDec\tHex\tSymb\t\t"
 	fmt.Fprintln(w, header)
 
@@ -44,7 +44,7 @@ func main() {
 				break
 			}
 
-			line += fmt.Sprintf("%d\t%s\t%s\t\t", currentDec, currentHex, currentSym)
+			line += fmt.Sprintf(" %d\t%s\t%s\t\t", currentDec, currentHex, currentSym)
 		}
 
 		fmt.Fprintln(w, line)
