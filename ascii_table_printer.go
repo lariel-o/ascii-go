@@ -8,6 +8,12 @@ import (
 )
 
 func main() {
+	if len(os.Args) > 1 && os.Args[1] == "-h" {
+		fmt.Println(helpString)
+
+		return
+	}
+
 	currentTableType := "printable"
 
 	if(len(os.Args) > 1) {
